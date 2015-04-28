@@ -1,14 +1,14 @@
 {
-  "name": "remux",
+  "name": "@ide/mux",
   "version": "1.0.0",
   "description": "Creates a promise that waits for the promises in nested data structures and resolves to data structures of the same form. It recursively traverses the input data structure and multiplexes its promises.",
-  "main": "index.js",
+  "main": "mux.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ide/remux.git"
+    "url": "https://github.com/ide/mux.git"
   },
   "keywords": [
     "promise",
@@ -25,8 +25,8 @@
   "author": "James Ide",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ide/remux/issues"
+    "url": "https://github.com/ide/mux/issues"
   },
-  "homepage": "https://github.com/ide/remux",
+  "homepage": "https://github.com/ide/mux",
   "devDependencies": {}
 }
