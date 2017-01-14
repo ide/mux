@@ -1,0 +1,22 @@
+machine:
+  environment:
+    PATH: "${PATH}:${HOME}/.yarn/bin"
+  node:
+    version: node
+
+dependencies:
+  cache_directories:
+    - ~/.yarn
+    - ~/.cache/yarn
+  pre:
+    - ./ci/yarn.sh -v 0.18.1
+  override:
+    - yarn --pure-lockfile
+  post:
+    - yarn run build
+
+test:
+  pre:
+    - yarn run flow -- check
+  override:
+    - yarn test

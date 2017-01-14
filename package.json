@@ -1,9 +1,11 @@
 {
-  "name": "@ide/mux",
+  "name": "@exponent/mux",
   "version": "1.0.0",
   "description": "Creates a promise that waits for the promises in nested data structures and resolves to data structures of the same form. It recursively traverses the input data structure and multiplexes its promises.",
-  "main": "mux.js",
+  "main": "build/mux.js",
   "scripts": {
+    "build": "babel -d build src",
+    "flow": "flow",
     "test": "jest"
   },
   "repository": {
@@ -18,9 +20,7 @@
     "mux",
     "nested",
     "deep",
-    "recursive",
-    "es6",
-    "es7"
+    "recursive"
   ],
   "author": "James Ide",
   "license": "MIT",
@@ -28,5 +28,26 @@
     "url": "https://github.com/ide/mux/issues"
   },
   "homepage": "https://github.com/ide/mux",
-  "devDependencies": {}
+  "babel": {
+    "plugins": [
+      "transform-async-to-generator",
+      "transform-es2015-modules-commonjs",
+      "transform-flow-strip-types"
+    ]
+  },
+  "jest": {
+    "rootDir": "src"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-jest": "^18.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-flow-strip-types": "^6.21.0",
+    "flow-bin": "^0.37.4",
+    "jest": "^18.1.0"
+  }
 }
