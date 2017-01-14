@@ -56,3 +56,16 @@ it(`supports nested promises that resolve to data structures`, async () => {
     ]
   })
 });
+
+it(`doesn't traverse into class instances`, async () => {
+  class Example {
+    constructor() {
+      this.hello = Promise.resolve('world');
+    }
+  }
+
+  let example = new Example();
+  let result = await mux(example);
+  expect(result.hello).not.toBe('world');
+  expect(result).toBe(example);
+});

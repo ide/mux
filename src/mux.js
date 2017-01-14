@@ -1,5 +1,5 @@
 // @flow
-import isObjectLike from 'lodash/isObjectLike';
+import isPlainObject from 'lodash/isPlainObject';
 import zip from 'lodash/zip';
 import zipObject from 'lodash/zipObject';
 
@@ -28,7 +28,7 @@ export default async function mux(promises: any): Promise<*> {
     return new Set(values);
   }
 
-  if (isObjectLike(promises)) {
+  if (isPlainObject(promises)) {
     let keys = Object.keys(promises);
     let values = [];
     for (let key of keys) {
