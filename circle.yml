@@ -9,7 +9,7 @@ dependencies:
     - ~/.yarn
     - ~/.cache/yarn
   pre:
-    - ./ci/yarn.sh -v 0.18.1
+    - ./yarn.sh -v 0.18.1
   override:
     - yarn --pure-lockfile
   post:
