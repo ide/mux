@@ -20,6 +20,11 @@ it(`supports Sets`, async () => {
   expect(result).toEqual(new Set(['hello', 'world']));
 });
 
+it(`supports promises`, async () => {
+  let result = await mux(Promise.resolve('hello'));
+  expect(result).toBe('hello');
+});
+
 it(`supports primitives`, async () => {
   let nullValue = await mux(null);
   expect(nullValue).toBe(null);
@@ -68,4 +73,17 @@ it(`doesn't traverse into class instances`, async () => {
   let result = await mux(example);
   expect(result.hello).not.toBe('world');
   expect(result).toBe(example);
+});
+
+it(`doesn't traverse into WeakMaps`, async () => {
+  let key = {};
+  let result = await mux(new WeakMap([[key, Promise.resolve('hello')]]));
+  expect(result.has(key)).toBe(true);
+  expect(result.get(key)).not.toBe('hello');
+});
+
+it(`doesn't traverse into WeakSets`, async () => {
+  let key = {};
+  let result = await mux(new WeakSet([key]));
+  expect(result.has(key)).toBe(true);
 });

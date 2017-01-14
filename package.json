@@ -5,6 +5,7 @@
   "main": "build/mux.js",
   "scripts": {
     "build": "babel -d build src",
+    "prepare": "yarn run build",
     "flow": "flow",
     "test": "jest"
   },
