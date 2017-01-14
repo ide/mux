@@ -1,4 +1,4 @@
-# mux [![CircleCI](https://circleci.com/gh/ide/mux.svg?style=svg)](https://circleci.com/gh/ide/mux)
+--# mux [![CircleCI](https://circleci.com/gh/ide/mux.svg?style=svg)](https://circleci.com/gh/ide/mux)
 A simple and convenient function that resolves promises in data structures like arrays, objects, Maps, and Sets
 
 ## What is mux?
@@ -81,4 +81,4 @@ await mux([
 ]
 ```
 
-Check out [the test suite](blob/master/src/__tests__/mux-tests.js) for even more examples.
+Check out [the test suite](src/__tests__/mux-tests.js) for even more examples.
