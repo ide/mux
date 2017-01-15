@@ -1,6 +1,6 @@
 {
   "name": "@exponent/mux",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Creates a promise that waits for the promises in nested data structures and resolves to data structures of the same form. It recursively traverses the input data structure and multiplexes its promises.",
   "main": "build/mux.js",
   "files": [
