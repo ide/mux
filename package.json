@@ -3,9 +3,13 @@
   "version": "1.0.2",
   "description": "Creates a promise that waits for the promises in nested data structures and resolves to data structures of the same form. It recursively traverses the input data structure and multiplexes its promises.",
   "main": "build/mux.js",
+  "files": [
+    "build/"
+  ],
   "scripts": {
-    "build": "babel -d build src",
-    "prepare": "yarn run build",
+    "babel": "babel",
+    "build": "./build.sh",
+    "prepublish": "yarn run build",
     "flow": "flow",
     "test": "jest"
   },
