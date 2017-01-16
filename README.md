@@ -82,3 +82,7 @@ await mux([
 ```
 
 Check out [the test suite](src/__tests__/mux-tests.js) for even more examples.
+
+## Interesting use cases
+
+If you've discovered a particularly interesting way to use mux, add it here and send a PR to share it.
