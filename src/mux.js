@@ -3,7 +3,7 @@ import isPlainObject from 'lodash/isPlainObject';
 import zip from 'lodash/zip';
 import zipObject from 'lodash/zipObject';
 
-export default async function mux(promises: any): Promise<*> {
+export default async function mux(promises: any): Promise<any> {
   if (promises == null) {
     return promises;
   }
