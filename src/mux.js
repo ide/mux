@@ -1,6 +1,6 @@
 // @flow
-import isPlainObject from 'lodash/isPlainObject';
-import zip from 'lodash/zip';
+import isPlainObject from 'lodash.isPlainObject';
+import zip from 'lodash.zip';
 
 export default async function mux(promises: any): Promise<any> {
   if (promises == null) {
