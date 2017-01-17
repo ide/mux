@@ -1,7 +1,6 @@
 // @flow
 import isPlainObject from 'lodash/isPlainObject';
 import zip from 'lodash/zip';
-import zipObject from 'lodash/zipObject';
 
 export default async function mux(promises: any): Promise<any> {
   if (promises == null) {
@@ -35,7 +34,13 @@ export default async function mux(promises: any): Promise<any> {
       values.push(promises[key]);
     }
     values = await Promise.all(values.map(mux));
-    return zipObject(keys, values);
+
+    let result = Object.create(Object.getPrototypeOf(promises));
+    let keyCount = keys.length;
+    for (let ii = 0; ii < keyCount; ii++) {
+      result[keys[ii]] = values[ii];
+    }
+    return result;
   }
 
   return promises;

@@ -62,6 +62,20 @@ it(`supports nested promises that resolve to data structures`, async () => {
   })
 });
 
+it(`doesn't set a prototype for prototype-less objects`, async () => {
+  let object = Object.create(null);
+  object.hello = Promise.resolve('world');
+  let result = await mux(object);
+  expect(result).toEqual({ hello: 'world' });
+  expect(Object.getPrototypeOf(result)).toBe(null);
+});
+
+it(`sets Object.prototype for plain objects with prototypes`, async () => {
+  let result = await mux({ hello: Promise.resolve('world') });
+  expect(result).toEqual({ hello: 'world' });
+  expect(Object.getPrototypeOf(result)).toBe(Object.prototype);
+});
+
 it(`doesn't traverse into class instances`, async () => {
   class Example {
     constructor() {
