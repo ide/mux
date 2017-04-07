@@ -21,13 +21,13 @@ await mux({
 ## Installing mux
 
 ```sh
-yarn add @exponent/mux
+yarn add @expo/mux
 ```
 
 And import it like this:
 
 ```js
-import mux from '@exponent/mux';
+import mux from '@expo/mux';
 ```
 
 ## More examples

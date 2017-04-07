@@ -1,6 +1,6 @@
 {
-  "name": "@exponent/mux",
-  "version": "1.0.5",
+  "name": "@expo/mux",
+  "version": "1.0.6",
   "description": "Creates a promise that waits for the promises in nested data structures and resolves to data structures of the same form. It recursively traverses the input data structure and multiplexes its promises.",
   "main": "build/mux.js",
   "files": [
@@ -48,13 +48,13 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-jest": "^18.0.0",
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^19.0.0",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-async-to-generator": "^6.16.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
-    "babel-plugin-transform-flow-strip-types": "^6.21.0",
-    "flow-bin": "^0.37.4",
-    "jest": "^18.1.0"
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "flow-bin": "^0.43.1",
+    "jest": "^19.0.2"
   }
 }
