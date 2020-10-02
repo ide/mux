@@ -1,0 +1,34 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['12', '14']
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: yarn install, build, and test
+      run: |
+        yarn install
+        yarn test --coverage
+      env:
+        CI: true
+    - run: cat ${GITHUB_EVENT_PATH}
+    - name: Upload coverage report
+      run: |
+        bash <(curl -s https://codecov.io/bash) \
+          -t "${{ secrets.CODECOV_TOKEN }}" \
+          -F node_${{ matrix.node-version }} \
+          -B "${GITHUB_REF//refs\/heads\//}" \
+          -T "${GITHUB_REF//refs\/tags\//}" \
+          -C "$GITHUB_SHA"
