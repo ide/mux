@@ -78,9 +78,7 @@ it(`sets Object.prototype for plain objects with prototypes`, async () => {
 
 it(`doesn't traverse into class instances`, async () => {
   class Example {
-    constructor() {
-      this.hello = Promise.resolve('world');
-    }
+    hello = Promise.resolve('world');
   }
 
   let example = new Example();

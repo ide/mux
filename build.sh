@@ -5,7 +5,7 @@ rm -fr build
 
 echo
 echo "📚  Compiling source files"
-npm run -s babel -- --out-dir build --ignore __tests__  src
+npm run tsc
 
 echo
 echo "🆗  Build finished"

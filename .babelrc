@@ -1,8 +1,0 @@
-{
-  "plugins": [
-    "add-module-exports",
-    "transform-async-to-generator",
-    "transform-es2015-modules-commonjs",
-    "transform-flow-strip-types"
-  ]
-}

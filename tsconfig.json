@@ -1,0 +1,11 @@
+{
+  "extends": "@tsconfig/node12/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "build",
+    "types": ["jest", "node"],
+    "sourceMap": true,
+    "declaration": true,
+    "noImplicitReturns": true
+  }
+}
