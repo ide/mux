@@ -16,9 +16,6 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Run Flow Checks
-          command: yarn flow -- check
-      - run:
           name: Run Tests
           command: yarn test -- --coverage
       - run:

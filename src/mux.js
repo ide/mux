@@ -1,4 +1,3 @@
-// @flow
 import isPlainObject from 'lodash/isPlainObject';
 import zip from 'lodash/zip';
 
