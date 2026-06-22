@@ -5,7 +5,7 @@ rm -fr build
 
 echo
 echo "📚  Compiling source files"
-npm run tsc
+npx tsc --project tsconfig.build.json
 
 echo
 echo "🆗  Build finished"

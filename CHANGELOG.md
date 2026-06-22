@@ -10,3 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - The continuous integration suite now runs on Node 24 instead of Node 12 and 14. This affects only the Node version we test against, not the versions you can use this package with, so it is not a breaking change. We no longer provide test coverage for Node versions older than 24.
+
+### Fixed
+
+- The build no longer publishes the test files inside the `build/` directory.

@@ -1,5 +1,5 @@
-import isPlainObject from 'lodash/isPlainObject';
-import zip from 'lodash/zip';
+import isPlainObject from 'lodash/isPlainObject.js';
+import zip from 'lodash/zip.js';
 
 export default async function mux(promises: any): Promise<any> {
   if (promises == null) {
