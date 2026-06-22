@@ -17,10 +17,11 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-    - name: yarn install, build, and test
+    - name: yarn install, build, type-check, and test
       run: |
         yarn install
-        yarn test --coverage
+        yarn tsc
+        yarn test
       env:
         CI: true
     - run: cat ${GITHUB_EVENT_PATH}
